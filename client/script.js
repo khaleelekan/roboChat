@@ -23,7 +23,7 @@ function typeText (element, text){
 
     let interval = setInterval(()=>{
         if(index < text.length){
-            element.innerHTML += text.chartAt(index);
+            element.innerHTML += text.chatAt(index);
             index ++;
         }else{
             clearInterval(interval)
@@ -44,7 +44,7 @@ function chatStripe (isAi, value, uniqueId){
         `
         <div class="wrapper ${isAi && 'ai'}">
          <div class="chat">
-          <div className="profile">
+          <div class="profile">
            <img
               src="${isAi ? bot : user}"
               alt = "${isAi ? 'bot': 'user'}"
@@ -100,6 +100,8 @@ const handleSubmit = async (e) => {
         const err = await response.text();
 
         messageDiv.innerHTML = 'Something went wrong'
+
+        alert(err)
     }
 }
 
